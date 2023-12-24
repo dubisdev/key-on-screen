@@ -1,0 +1,49 @@
+/* CSS Reset box-sizing */
+
+*,
+*::before,
+*::after {
+  user-select: none;
+  margin: auto;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Css Color Variables */
+
+:root {
+  --color-primary: #f9ed69;
+  --color-secondary: #f08a5d;
+  --color-tertiary: #b83b5e;
+  --color-quaternary: #6a2c70;
+  --color-quinary: #1e1f268d;
+}
+
+/* Dark mode */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #f08a5d;
+    --color-secondary: #b83b5e;
+    --color-tertiary: #f9ed69;
+    --color-quaternary: #6a2c70;
+    --color-quinary: #1e1f268d;
+  }
+}
+
+#keypress-displayer {
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: var(--color-quinary);
+  border-radius: 5px;
+  text-align: center;
+  color: var(--color-secondary);
+}
+
+.pressed-key {
+  border: 1px solid var(--color-primary);
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  border-radius: 5px;
+  color: var(--color-primary);
+  font-weight: bold;
+}
