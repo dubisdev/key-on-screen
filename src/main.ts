@@ -7,11 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 const runApp = () => {
-  // Manage keypress when the app is focused
+  // Disable context menu
+  document.addEventListener("contextmenu", event => {
+    event.preventDefault()
+  })
+
+  // Manage keypress when the app is focused (webview)
   document.addEventListener('keydown', updateDisplayForWebviewKeyEvent)
 
+  // Manage keypress when the app is not focused (system wide)
   listen("KeyPress", updateDisplayForSystemKeyPressEvent)
-
   listen("KeyRelease", updateDisplayForSystemKeyReleaseEvent)
 }
 
