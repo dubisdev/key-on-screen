@@ -45,9 +45,11 @@
         "title": "KeyPress Displayer",
         "transparent": true,
         "decorations": false,
-        "width": 600,
+        "minWidth": 500,
+        "minHeight": 30,
         "alwaysOnTop": true,
-        "height": 200
+        "width": 600,
+        "height": 65
       }
     ]
   }
