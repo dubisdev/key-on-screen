@@ -1,9 +1,10 @@
 import { keyStore } from "../utils/key-history-store";
+import { getNormalizedKey } from "../utils/normalize-key";
 
 export const addNormalizedKeyFromWebView = (event: KeyboardEvent) => {
   event.preventDefault();
 
-  const normalizedKey = getKeyFromEvent(event);
+  const normalizedKey = getNormalizedKey(event.code);
 
   keyStore.add(normalizedKey);
 }
@@ -11,30 +12,7 @@ export const addNormalizedKeyFromWebView = (event: KeyboardEvent) => {
 export const removeNormalizedKeyFromWebView = (event: KeyboardEvent) => {
   event.preventDefault();
 
-  const normalizedKey = getKeyFromEvent(event);
+  const normalizedKey = getNormalizedKey(event.code);
 
   keyStore.remove(normalizedKey);
-}
-
-const getKeyFromEvent = (event: KeyboardEvent) => {
-  const { key } = event;
-
-  const specialCases = {
-    "ArrowUp": "↑",
-    "ArrowDown": "↓",
-    "ArrowLeft": "←",
-    "ArrowRight": "→",
-    "Escape": "Esc",
-    "Enter": "↵ Enter",
-    "Backspace": "⌫ Backspace",
-    "Tab": "↹ Tab",
-    " ": "Space",
-    "Shift": "⇧ Shift",
-  }
-
-  if (key in specialCases) {
-    return specialCases[key as keyof typeof specialCases]
-  }
-
-  return key
 }
