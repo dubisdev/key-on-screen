@@ -1,3 +1,5 @@
+import { listen } from "@tauri-apps/api/event";
+
 document.addEventListener("DOMContentLoaded", () => {
   runApp();
 })
@@ -5,6 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
 const runApp = () => {
   const $displayer = document.getElementById('keypress-displayer') as HTMLDivElement;
 
+  listen<string>("KeyPress", ({ event, payload }) => {
+    console.log(event, payload)
+    $displayer.innerHTML = CreateelementFromKey(payload)
+  })
+
+  listen("KeyRelease", console.log)
+
+  // Manage keypress when the app is focused
   document.addEventListener('keydown', (event) => {
     event.preventDefault();
     const pressed = getKeysFromEvent(event);

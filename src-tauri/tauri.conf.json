@@ -38,6 +38,8 @@
     },
     "windows": [
       {
+        "focus": false,
+        "label": "main",
         "fullscreen": false,
         "resizable": true,
         "title": "KeyPress Displayer",
