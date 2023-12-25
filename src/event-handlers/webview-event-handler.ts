@@ -1,27 +1,23 @@
-import { createDOMElementForKey, getDisplayerDOMElement } from "../utils/dom-manipulation";
+import { keyStore } from "../utils/key-history-store";
 
-export const updateDisplayForWebviewKeyEvent = (event: KeyboardEvent) => {
+export const addNormalizedKeyFromWebView = (event: KeyboardEvent) => {
   event.preventDefault();
 
-  const $displayer = getDisplayerDOMElement();
+  const normalizedKey = getKeyFromEvent(event);
 
-  const pressedCombination = getKeysFromEvent(event);
-
-  $displayer.innerHTML = pressedCombination.map(createDOMElementForKey).join(" ")
+  keyStore.add(normalizedKey);
 }
 
-const getKeysFromEvent = (event: KeyboardEvent) => {
+export const removeNormalizedKeyFromWebView = (event: KeyboardEvent) => {
+  event.preventDefault();
+
+  const normalizedKey = getKeyFromEvent(event);
+
+  keyStore.remove(normalizedKey);
+}
+
+const getKeyFromEvent = (event: KeyboardEvent) => {
   const { key } = event;
-  const pressedKeys = []
-
-  // Add modifiers
-  if (event.ctrlKey) pressedKeys.push("Ctrl")
-  if (event.shiftKey) pressedKeys.push("Shift")
-  if (event.altKey) pressedKeys.push("Alt")
-  if (event.metaKey) pressedKeys.push("⊞ Windows")
-
-  // We dont add again the modifier if it is the key pressed
-  if (["Alt", "Shift", "Control", "Meta"].includes(key)) return pressedKeys
 
   const specialCases = {
     "ArrowUp": "↑",
@@ -33,14 +29,12 @@ const getKeysFromEvent = (event: KeyboardEvent) => {
     "Backspace": "⌫ Backspace",
     "Tab": "↹ Tab",
     " ": "Space",
+    "Shift": "⇧ Shift",
   }
 
   if (key in specialCases) {
-    pressedKeys.push(specialCases[key as keyof typeof specialCases])
-    return pressedKeys
+    return specialCases[key as keyof typeof specialCases]
   }
 
-  pressedKeys.push(key)
-
-  return pressedKeys
+  return key
 }
