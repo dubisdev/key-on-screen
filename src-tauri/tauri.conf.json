@@ -28,6 +28,8 @@
       ],
       "identifier": "kos.dubis.dev",
       "publisher": "dubis.dev",
+      "shortDescription": "KoS - Key On Screen",
+      "longDescription": "KoS - Key On Screen",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",

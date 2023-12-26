@@ -1433,6 +1433,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "key-on-display"
+version = "0.0.0"
+dependencies = [
+ "rdev",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+]
+
+[[package]]
 name = "kuchikiki"
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3484,17 +3495,6 @@ checksum = "ba01f98f509cb5dc05f4e5fc95e535f78260f15fea8fe1a8abdd08f774f1cee7"
 dependencies = [
  "syn 1.0.109",
  "windows-tokens",
-]
-
-[[package]]
-name = "windows-keypress-displayer"
-version = "0.0.0"
-dependencies = [
- "rdev",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
 ]
 
 [[package]]
