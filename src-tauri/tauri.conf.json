@@ -24,8 +24,7 @@
     "bundle": {
       "active": true,
       "targets": [
-        "nsis",
-        "updater"
+        "msi"
       ],
       "identifier": "kos.dubis.dev",
       "icon": [
