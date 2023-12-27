@@ -17,6 +17,9 @@
         "startDragging": true
       }
     },
+    "systemTray": {
+      "iconPath": "icons/icon.ico"
+    },
     "bundle": {
       "active": true,
       "targets": [
@@ -30,7 +33,7 @@
       "longDescription": "KoS - Key On Screen",
       "windows": {
         "nsis": {
-          "installerIcon": "icons/icon.ico"
+          "installerIcon": "icons/icon.png"
         }
       },
       "icon": [
@@ -67,7 +70,9 @@
         "minHeight": 40,
         "alwaysOnTop": true,
         "width": 600,
-        "height": 65
+        "height": 65,
+        "minimizable": false,
+        "maximizable": false
       }
     ]
   }

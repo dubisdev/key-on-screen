@@ -3,6 +3,7 @@
 
 mod app;
 use app::listen_key;
+use app::tray;
 
 use tauri::Manager;
 
@@ -14,6 +15,7 @@ struct Payload {
 
 fn main() {
     let tauri_app = tauri::Builder::default();
+    let tray = tray::create_tray_menu();
 
     tauri_app
         // .plugin(tauri_plugin_window_state::Builder::default().build())
@@ -36,6 +38,10 @@ fn main() {
             app.emit_all("single-instance", Payload { args: argv, cwd })
                 .unwrap();
         }))
+        .system_tray(tray)
+        .on_system_tray_event(|app, event| {
+            tray::on_tray_event(app, event);
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
