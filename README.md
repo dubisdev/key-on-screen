@@ -26,13 +26,13 @@
 
 <hr />
 
-<!-- <p align="center">
-    <img
-        alt=""
-        src=""
-        width="500px" /> -->
+## Screenshots
 
-<!-- ## Screenshots -->
+<p align="center">
+    <img
+        alt="KoS gif"
+        src="./assets/animation.gif"
+        width="500px" />
 
 <!-- <p align="center">
     <img
