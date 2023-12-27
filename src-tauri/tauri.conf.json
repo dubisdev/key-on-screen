@@ -18,7 +18,7 @@
       }
     },
     "systemTray": {
-      "iconPath": "icons/icon.ico"
+      "iconPath": "icons/icon.png"
     },
     "bundle": {
       "active": true,
@@ -33,7 +33,7 @@
       "longDescription": "KoS - Key On Screen",
       "windows": {
         "nsis": {
-          "installerIcon": "icons/icon.png"
+          "installerIcon": "icons/icon.ico"
         }
       },
       "icon": [
