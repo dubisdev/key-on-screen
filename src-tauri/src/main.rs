@@ -4,6 +4,14 @@
 mod app;
 use app::listen_key;
 
+use tauri::Manager;
+
+#[derive(Clone, serde::Serialize)]
+struct Payload {
+    args: Vec<String>,
+    cwd: String,
+}
+
 fn main() {
     let tauri_app = tauri::Builder::default();
 
@@ -24,6 +32,10 @@ fn main() {
                 api.prevent_close();
             }
         })
+        .plugin(tauri_plugin_single_instance::init(|app, argv, cwd| {
+            app.emit_all("single-instance", Payload { args: argv, cwd })
+                .unwrap();
+        }))
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
