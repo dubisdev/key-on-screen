@@ -1,7 +1,7 @@
 {
-  "name": "keypress-displayer",
+  "name": "key-on-screen",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tauri-apps/api": "1.5.3",
-    "typescript-event-target": "^1.1.0"
+    "typescript-event-target": "1.1.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "1.5.9",

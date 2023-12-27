@@ -24,7 +24,9 @@
     "bundle": {
       "active": true,
       "targets": [
-        "msi"
+        "msi",
+        "nsis",
+        "updater"
       ],
       "identifier": "kos.dubis.dev",
       "publisher": "dubis.dev",
@@ -40,6 +42,16 @@
     },
     "security": {
       "csp": null
+    },
+    "updater": {
+      "active": true,
+      "endpoints": [
+        "https://github.com/dubisdev/key-on-screen/releases/latest/download/latest.json"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDc5MzRFNzU5MTREQ0RGMUMKUldRYzM5d1VXZWMwZVRDaU9LdUl4YldZMEZMclFyZzI4cFkyVmNyL3A0QTlDYTNxdVdCYmo4Wm4K",
+      "windows": {
+        "installMode": "passive"
+      }
     },
     "windows": [
       {

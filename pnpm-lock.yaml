@@ -9,7 +9,7 @@ dependencies:
     specifier: 1.5.3
     version: 1.5.3
   typescript-event-target:
-    specifier: ^1.1.0
+    specifier: 1.1.0
     version: 1.1.0
 
 devDependencies:

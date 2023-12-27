@@ -1,0 +1,107 @@
+name: 'Generate Release'
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-types:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+
+      - name: Install app dependencies
+        run: pnpm i
+
+      - name: Run typecheck
+        run: pnpm tsc
+
+  semantic-release:
+    runs-on: ubuntu-latest
+    needs: test-types
+
+    outputs:
+      new_release: ${{ steps.semantic.outputs.new_release_published }}
+      release_version: ${{ steps.semantic.outputs.new_release_version }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+
+      - name: Semantic Release
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-executable:
+    runs-on: windows-latest
+    needs: semantic-release
+    environment: publish
+    if: needs.semantic-release.outputs.new_release == 'true'
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+
+      - name: install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+ 
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: "./src-tauri -> target"
+
+      - name: Install app dependencies
+        run: pnpm i
+      
+      - name: bump package version
+        run: npm pkg set version="${{ needs.semantic-release.outputs.release_version }}"
+
+      - name: get latest release id
+        id: latest_release_id
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data } = await github.rest.repos.getLatestRelease({ 
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            })
+
+            return data.id
+
+      - uses: tauri-apps/tauri-action@v0
+        id: tauri_action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+        with:
+          releaseId: ${{ steps.latest_release_id.outputs.result }}

@@ -60,6 +60,6 @@ When Windows defender pops up:
 
 <!-- Be sure you download KoS from the [official release link]() -->
 
-<!-- ## ⚖️ License
+## ⚖️ License
 
-David Jiménez © 2023 -->
+MIT © David Jiménez 2023
