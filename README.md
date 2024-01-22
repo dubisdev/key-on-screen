@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/dubisdev/key-on-screen">
+  <a href="https://github.com/kiimesoft/key-on-screen">
     <img
         width="128px"
         alt="Key On Screen logo"
@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/dubisdev/key-on-screen/releases/latest">
+  <a href="https://github.com/kiimesoft/key-on-screen/releases/latest">
     🔗 Download KoS
   </a>
     &nbsp; | &nbsp; Give it a Star ⭐ | &nbsp;
