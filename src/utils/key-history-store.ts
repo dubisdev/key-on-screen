@@ -16,6 +16,7 @@ class KeyStore extends TypedEventTarget<KeyStoreEventMap> {
     }
 
     public add(key: string): void {
+        if (this.keys.at(-1) === key) return
         this.keys.push(key);
         this.dispatchTypedEvent(KeyStoreEvent.KEYS_UPDATED, new KeysUpdatedEvent(this.keys));
     }
