@@ -50,7 +50,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/kiimesoft/key-on-screen/releases/latest/download/latest.json"
+        "https://github.com/dubisdev/key-on-screen/releases/latest/download/latest.json"
       ],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDc5MzRFNzU5MTREQ0RGMUMKUldRYzM5d1VXZWMwZVRDaU9LdUl4YldZMEZMclFyZzI4cFkyVmNyL3A0QTlDYTNxdVdCYmo4Wm4K",
       "windows": {
