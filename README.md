@@ -62,4 +62,4 @@ When Windows defender pops up:
 
 ## ⚖️ License
 
-MIT © David Jiménez 2023
+MIT © David Jiménez 2024
