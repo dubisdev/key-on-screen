@@ -1,7 +1,7 @@
 import { listen } from "@tauri-apps/api/event";
 import { addNormalizedKeyFromWebView, removeNormalizedKeyFromWebView } from "./event-handlers/webview-event-handler";
 import { addNormalizedKeyFromSystem, removeNormalizedKeyFromSystem } from "./event-handlers/system-event-handler";
-import { KeyStoreEvent, keyStore } from "./utils/key-history-store";
+import { keyStore } from "./utils/key-history-store";
 import { createDOMElementForKey, getDisplayerDOMElement } from "./utils/dom-manipulation";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,8 +23,7 @@ const runApp = () => {
   listen("KeyRelease", removeNormalizedKeyFromSystem)
 
   // Update display when the key store is updated
-  keyStore.addEventListener(KeyStoreEvent.KEYS_UPDATED, ({ detail }) => {
-    const keys = detail
+  keyStore.subscribe((keys) => {
     const $display = getDisplayerDOMElement()
     $display.innerHTML = keys.map(createDOMElementForKey).join(" ")
   })

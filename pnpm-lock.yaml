@@ -11,9 +11,6 @@ importers:
       '@tauri-apps/api':
         specifier: 1.6.0
         version: 1.6.0
-      typescript-event-target:
-        specifier: 1.1.1
-        version: 1.1.1
     devDependencies:
       '@tauri-apps/cli':
         specifier: 1.6.0
@@ -348,9 +345,6 @@ packages:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
 
-  typescript-event-target@1.1.1:
-    resolution: {integrity: sha512-dFSOFBKV6uwaloBCCUhxlD3Pr/P1a/tJdcmPrTXCHlEFD3faj0mztjcGn6VBAhQ0/Bdy8K3VWrrqwbt/ffsYsg==}
-
   typescript@5.5.4:
     resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
     engines: {node: '>=14.17'}
@@ -612,8 +606,6 @@ snapshots:
       fsevents: 2.3.3
 
   source-map-js@1.2.0: {}
-
-  typescript-event-target@1.1.1: {}
 
   typescript@5.5.4: {}
 
