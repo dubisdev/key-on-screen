@@ -65,9 +65,6 @@ jobs:
 
       - name: Install app dependencies
         run: pnpm i
-      
-      - name: bump package version
-        run: npm pkg set version="${{ needs.semantic-release.outputs.release_version }}"
 
       - name: get latest release id
         id: latest_release_id
