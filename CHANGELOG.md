@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/dubisdev/key-on-screen/compare/v1.1.5...v1.2.0) (2024-10-02)
+
+
+### Features
+
+* Migrate to Tauri v2 ([1acbfb0](https://github.com/dubisdev/key-on-screen/commit/1acbfb085819543b83a6f71f3d8852368e64d112))
+
+
+### Bug Fixes
+
+* Improve styles ([635d355](https://github.com/dubisdev/key-on-screen/commit/635d35561a650423ce955c79b13169f4031c881a))
+
 ## [1.1.5](https://github.com/dubisdev/key-on-screen/compare/v1.1.4...v1.1.5) (2024-07-23)
 
 
