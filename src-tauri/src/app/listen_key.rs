@@ -1,8 +1,9 @@
 use crate::app::get_key;
 use rdev::{listen, Event, EventType};
-use tauri::Manager;
 
-pub fn create_device_query_listener(handle: tauri::AppHandle) {
+use tauri::{AppHandle, Emitter};
+
+pub fn create_device_query_listener(handle: AppHandle) {
     std::thread::spawn(move || {
         let callback = move |event: Event| {
             if let EventType::KeyRelease(key) = event.event_type {
