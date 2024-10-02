@@ -16,7 +16,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 7px;
 }
 
 /* Css Color Variables */
@@ -43,7 +42,7 @@ body {
 
 #keypress-displayer {
   overflow: hidden;
-  padding: 3px;
+  padding: 3px 10px;
   width: 100%;
   height: 100%;
   display: flex;
