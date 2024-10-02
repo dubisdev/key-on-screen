@@ -3,9 +3,11 @@ import { addNormalizedKeyFromWebView, removeNormalizedKeyFromWebView } from "./e
 import { addNormalizedKeyFromSystem, removeNormalizedKeyFromSystem } from "./event-handlers/system-event-handler";
 import { keyStore } from "./utils/key-history-store";
 import { createDOMElementForKey, getDisplayerDOMElement } from "./utils/dom-manipulation";
+import { checkForUpdates } from "./utils/update-notifier";
 
 document.addEventListener("DOMContentLoaded", () => {
   runApp();
+  checkForUpdates();
 })
 
 const runApp = () => {

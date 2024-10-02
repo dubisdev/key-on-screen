@@ -44,7 +44,6 @@
     }
   },
   "app": {
-    "withGlobalTauri": true,
     "windows": [
       {
         "focus": false,

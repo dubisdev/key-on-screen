@@ -19,12 +19,13 @@ fn main() {
     let tauri_app = tauri::Builder::default();
 
     tauri_app
+        .plugin(tauri_plugin_process::init())
+        .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_single_instance::init(|app, argv, cwd| {
             app.emit("single-instance", Payload { args: argv, cwd })
                 .unwrap();
         }))
-        // .plugin(tauri_plugin_window_state::Builder::default().build())
         .setup(|app| {
             configure_tray_menu(&app).unwrap();
 
