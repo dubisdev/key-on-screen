@@ -12,7 +12,7 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
       '@tauri-apps/plugin-updater':
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0
     devDependencies:
       '@tauri-apps/cli':
