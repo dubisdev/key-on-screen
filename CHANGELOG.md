@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/dubisdev/key-on-screen/compare/v1.2.0...v1.2.1) (2025-06-19)
+
+
+### Bug Fixes
+
+* Update dependencies & Security fixes ([6c25277](https://github.com/dubisdev/key-on-screen/commit/6c25277e64ab8d83b6ff7301d5c58bfd42217d56))
+
 ## [1.2.0](https://github.com/dubisdev/key-on-screen/compare/v1.1.5...v1.2.0) (2024-10-02)
 
 
