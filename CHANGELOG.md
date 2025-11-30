@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/dubisdev/key-on-screen/compare/v1.2.2...v1.2.3) (2025-11-30)
+
+
+### Bug Fixes
+
+* Update deps (security update) ([e579d81](https://github.com/dubisdev/key-on-screen/commit/e579d81f4b5a0313a4748b63ae858953683fa1d7))
+
 ## [1.2.2](https://github.com/dubisdev/key-on-screen/compare/v1.2.1...v1.2.2) (2025-09-14)
 
 
