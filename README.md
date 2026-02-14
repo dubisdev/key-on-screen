@@ -20,8 +20,7 @@
   <a href="https://github.com/dubisdev/key-on-screen/releases/latest">
     🔗 Download KoS
   </a>
-    &nbsp; | &nbsp; Give it a Star ⭐ | &nbsp;
-    <a href="https://www.buymeacoffee.com/dubisdev">Support the project 🤝</a>
+    &nbsp; | &nbsp; Give it a Star ⭐
 </p>
 
 <hr />
@@ -63,3 +62,4 @@ When Windows defender pops up:
 ## ⚖️ License
 
 MIT © David Jiménez 2026
+
