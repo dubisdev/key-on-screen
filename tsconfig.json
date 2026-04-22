@@ -8,6 +8,7 @@
       "DOM",
       "DOM.Iterable"
     ],
+    "types": [],
     "skipLibCheck": true,
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -19,7 +20,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "rootDir": "./src"
   },
   "include": [
     "src"
