@@ -8,17 +8,18 @@ jobs:
   test-types:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: setup node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: 24
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         name: Install pnpm
         with:
           version: 10
+          cache: true
 
       - name: Install app dependencies
         run: pnpm i
@@ -44,17 +45,18 @@ jobs:
     if: needs.release-please.outputs.new_release == 'true'
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: setup node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: 24
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         name: Install pnpm
         with:
           version: 10
+          cache: true
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
@@ -68,7 +70,7 @@ jobs:
 
       - name: get latest release id
         id: latest_release_id
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const { data } = await github.rest.repos.getLatestRelease({ 
