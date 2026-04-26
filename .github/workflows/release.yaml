@@ -35,7 +35,7 @@ jobs:
       new_release: ${{ steps.release.outputs.release_created }}
 
     steps:
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@v5
         id: release
 
   build-executable:
