@@ -8,17 +8,17 @@ jobs:
   test-types:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: setup node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 24
 
-      - uses: pnpm/action-setup@v6
+      - uses: pnpm/setup@v2
         name: Install pnpm
         with:
-          version: 10
+          version: 11
           cache: true
 
       - name: Install app dependencies
@@ -45,17 +45,17 @@ jobs:
     if: needs.release-please.outputs.new_release == 'true'
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: setup node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 24
 
-      - uses: pnpm/action-setup@v6
+      - uses: pnpm/setup@v2
         name: Install pnpm
         with:
-          version: 10
+          version: 11
           cache: true
 
       - name: install Rust stable
@@ -80,7 +80,7 @@ jobs:
 
             return data.id
 
-      - uses: tauri-apps/tauri-action@v0
+      - uses: tauri-apps/tauri-action@v1
         id: tauri_action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
