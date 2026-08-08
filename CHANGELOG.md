@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.6](https://github.com/dubisdev/key-on-screen/compare/v1.2.5...v1.2.6) (2026-08-08)
+
+
+### Bug Fixes
+
+* **security:** Update dependencies ([a3e724c](https://github.com/dubisdev/key-on-screen/commit/a3e724cd1f6ef000032d9b257f809a5d95428b0e))
+
 ## [1.2.5](https://github.com/dubisdev/key-on-screen/compare/v1.2.4...v1.2.5) (2026-04-22)
 
 
