@@ -23,6 +23,15 @@
     &nbsp; | &nbsp; Give it a Star ⭐
 </p>
 
+<p align="center">
+  <img
+      src="https://img.shields.io/github/package-json/v/dubisdev/key-on-screen?label=Version&style=flat-square"
+      alt="Last available version" />
+  <img
+      src="https://img.shields.io/github/downloads/dubisdev/key-on-screen/total.svg?style=flat-square&color=blue&label=Downloads"
+      alt="Total downloads" />
+</p>
+
 <hr />
 
 ## Screenshots
